@@ -88,7 +88,11 @@ function render(){
   if (n.ending){ mark(S.node); blip(70, 0.9, 'sawtooth', 0.05); }
 
   const opts = [];
-  if (n.choices) n.choices.forEach(c => { if (!c.if || S.flags[c.if]) opts.push(c); });
+  if (n.choices) n.choices.forEach(c => {
+    if (c.if && !S.flags[c.if]) return;
+    if (c.not && S.flags[c.not]) return;
+    opts.push(c);
+  });
   opts.forEach((c, i) => {
     const b = document.createElement('button');
     b.className = 'choice'; b.type = 'button';

@@ -18,7 +18,7 @@ docs/          the game, served by GitHub Pages
   index.html   page shell
   style.css
   engine.js    ~80-line VN engine: nodes, typing, choices, flags, endings
-  script.js    the whole story as one data structure (62 nodes, 6 endings)
+  script.js    the whole story as one data structure (165 nodes, 10 endings)
   assets/      keyed sprites + backgrounds
 art/
   gen.py       Replicate image generation; embeds the locked style token
@@ -41,7 +41,8 @@ my_node: {bg:'office', left:'robin-tired', who:'YOU', text:"...",
 ```
 
 `next` for a linear beat, `choices` for a branch, `ending:true` to finish.
-`{if:'flag'}` on a choice hides it until the flag is set.
+`{if:'flag'}` on a choice hides it until the flag is set; `{not:'flag'}` hides it
+once the flag is set (used for hub options you shouldn't be offered twice).
 
 ## Checks
 
@@ -49,4 +50,4 @@ my_node: {bg:'office', left:'robin-tired', who:'YOU', text:"...",
 and walks every reachable node depth-first, asserting that each one renders,
 that visible choice buttons match the script's own flag conditions, that every
 ending sets the ending state and offers a restart, and that keyboard selection
-and the mute toggle work. Current run: 62/62 nodes, 6/6 endings, 0 errors.
+and the mute toggle work. Current run: 165 nodes rendered under two flag regimes, 10/10 endings reachable and saved, 0 errors.
