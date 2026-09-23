@@ -12,18 +12,20 @@
   <div id="bg"></div>
   <img id="left" class="sprite" alt="">
   <img id="right" class="sprite" alt="">
+  <button id="mute" type="button" aria-pressed="false" title="Mute (M)">♪ ON</button>
   <div id="box">
     <div id="name"></div>
-    <div id="text"></div>
+    <div id="text" aria-live="polite" role="status"></div>
     <div id="hint">click or press space</div>
-    <div id="choices"></div>
+    <div id="choices" role="group" aria-label="Choices"></div>
   </div>
   <div id="title">
     <img id="titleart" src="assets/title.png" alt="">
     <div id="titlewrap">
       <h1>IT'S<br><span class="red">PROBABLY</span><br>FINE</h1>
       <p class="tag">A cosmic horror office comedy.<br>Six endings. One deploy window.</p>
-      <button id="start-btn">BEGIN SHIFT</button>
+      <button id="start-btn" type="button">BEGIN SHIFT</button>
+      <div id="collection"></div>
     </div>
   </div>
 </div>

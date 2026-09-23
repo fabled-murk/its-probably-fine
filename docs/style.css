@@ -33,3 +33,21 @@ body.ending #box{border-top-width:14px}
   border:0;padding:15px 34px;cursor:pointer}
 #start-btn:hover{background:var(--red)}
 @media (max-aspect-ratio:1/1){ .sprite{height:62%} #box{min-height:40%} }
+
+/* --- polish --- */
+#bg.fading{opacity:0}
+.choice .num{display:inline-block;min-width:1.5em;margin-right:.6em;font-weight:700;color:var(--red);font-size:.85em}
+.choice:hover .num,.choice:focus .num{color:var(--paper)}
+.choice:focus{outline:3px solid var(--red);outline-offset:2px}
+.choice:focus-visible{background:var(--red);border-color:var(--red)}
+.ending-btn .num{color:var(--red)}
+.ending-coll{margin-top:10px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;opacity:.5}
+#mute{position:absolute;top:14px;right:16px;z-index:5;font:inherit;font-size:11px;letter-spacing:.18em;
+  background:var(--ink);color:var(--paper);border:2px solid var(--paper);padding:6px 11px;cursor:pointer;opacity:.5}
+#mute:hover{opacity:1;background:var(--red);border-color:var(--red)}
+#collection{margin-top:20px;border-top:2px solid var(--ink);padding-top:12px;text-align:left}
+.coll-head{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;margin-bottom:7px;color:var(--red)}
+.coll-row{font-size:12px;letter-spacing:.09em;line-height:1.75;color:var(--ink);opacity:.28;text-transform:uppercase}
+.coll-row.got{opacity:1;font-weight:700}
+#start-btn:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){ .sprite{animation:none} #bg{transition:none} }

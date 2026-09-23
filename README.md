@@ -42,3 +42,11 @@ my_node: {bg:'office', left:'robin-tired', who:'YOU', text:"...",
 
 `next` for a linear beat, `choices` for a branch, `ending:true` to finish.
 `{if:'flag'}` on a choice hides it until the flag is set.
+
+## Checks
+
+`node test.mjs` (needs `npm i jsdom`) loads the real page into a simulated DOM
+and walks every reachable node depth-first, asserting that each one renders,
+that visible choice buttons match the script's own flag conditions, that every
+ending sets the ending state and offers a restart, and that keyboard selection
+and the mute toggle work. Current run: 62/62 nodes, 6/6 endings, 0 errors.
